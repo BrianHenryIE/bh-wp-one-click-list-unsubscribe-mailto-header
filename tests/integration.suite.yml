@@ -17,7 +17,7 @@ modules:
             tablePrefix: "%TEST_TABLE_PREFIX%"
             domain: "%TEST_SITE_WP_DOMAIN%"
             adminEmail: "%TEST_SITE_ADMIN_EMAIL%"
-            title: "bh-wp-imap-one-click-list-unsubscribe"
-            plugins: ['bh-wp-imap-one-click-list-unsubscribe/bh-wp-imap-one-click-list-unsubscribe.php']
-            activatePlugins: ['bh-wp-imap-one-click-list-unsubscribe/bh-wp-imap-one-click-list-unsubscribe.php']
+            title: "bh-wp-one-click-list-unsubscribe"
+            plugins: ['bh-wp-one-click-list-unsubscribe/bh-wp-one-click-list-unsubscribe.php','mailpoet/mailpoet.php','newsletter/plugin.php']
+            activatePlugins: ['bh-wp-one-click-list-unsubscribe/bh-wp-one-click-list-unsubscribe.php','mailpoet/mailpoet.php','newsletter/plugin.php']
 bootstrap: _bootstrap.php

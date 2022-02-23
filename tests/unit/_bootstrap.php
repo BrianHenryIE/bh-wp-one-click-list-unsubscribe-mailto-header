@@ -2,10 +2,11 @@
 /**
  * PHPUnit bootstrap file for WP_Mock.
  *
- * @package           BH_WP_IMAP_One_Click_List_Unsubscribe
+ *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
  */
+
+WP_Mock::setUsePatchwork( true );
+WP_Mock::bootstrap();
 
 global $plugin_root_dir;
 require_once $plugin_root_dir . '/autoload.php';
-
-WP_Mock::bootstrap();

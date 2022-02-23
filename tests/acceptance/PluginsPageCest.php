@@ -1,7 +1,7 @@
-<?php 
+<?php
 
-class PluginsPageCest
-{
+class PluginsPageCest {
+
 
 	/**
 	 * Login and navigate to plugins.php.
@@ -21,7 +21,7 @@ class PluginsPageCest
 	 */
 	public function testPluginsPageForName( AcceptanceTester $I ) {
 
-		$I->canSee( 'BH WP IMAP One Click List Unsubscribe' );
+		$I->canSee( 'IMAP One-Click List-Unsubscribe' );
 	}
 
 	/**

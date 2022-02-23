@@ -2,13 +2,14 @@
 /**
  * Class Plugin_Test. Tests the root plugin setup.
  *
- * @package BH_WP_IMAP_One_Click_List_Unsubscribe
+ *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
  * @author     Brian Henry <BrianHenryIE@gmail.com>
  */
 
-namespace BH_WP_IMAP_One_Click_List_Unsubscribe;
+namespace BrianHenryIE\WP_One_Click_List_Unsubscribe;
 
-use BH_WP_IMAP_One_Click_List_Unsubscribe\includes\BH_WP_IMAP_One_Click_List_Unsubscribe;
+use BrianHenryIE\WP_One_Click_List_Unsubscribe\API\API;
+use BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Includes\BH_WP_One_Click_List_Unsubscribe;
 
 /**
  * Verifies the plugin has been instantiated and added to PHP's $GLOBALS variable.
@@ -20,9 +21,9 @@ class Plugin_Develop_Test extends \Codeception\TestCase\WPTestCase {
 	 */
 	public function test_plugin_instantiated() {
 
-		$this->assertArrayHasKey( 'bh_wp_imap_one_click_list_unsubscribe', $GLOBALS );
+		$this->assertArrayHasKey( 'bh_wp_one_click_list_unsubscribe', $GLOBALS );
 
-		$this->assertInstanceOf( BH_WP_IMAP_One_Click_List_Unsubscribe::class, $GLOBALS['bh_wp_imap_one_click_list_unsubscribe'] );
+		$this->assertInstanceOf( API::class, $GLOBALS['bh_wp_one_click_list_unsubscribe'] );
 	}
 
 }

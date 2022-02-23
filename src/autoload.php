@@ -6,17 +6,16 @@
  *
  * @link              http://example.com
  * @since             1.0.0
- * @package           BH_WP_IMAP_One_Click_List_Unsubscribe
+ * @package           brianhenryie/bh-wp-one-click-list-unsubscribe
  *
  * @see https://github.com/pablo-sg-pacheco/wp-namespace-autoloader/
  */
 
-namespace BH_WP_IMAP_One_Click_List_Unsubscribe;
+namespace BrianHenryIE\WP_One_Click_List_Unsubscribe;
 
-use BH_WP_IMAP_One_Click_List_Unsubscribe\Pablo_Pacheco\WP_Namespace_Autoloader\WP_Namespace_Autoloader;
+use BrianHenryIE\WP_One_Click_List_Unsubscribe\Pablo_Pacheco\WP_Namespace_Autoloader\WP_Namespace_Autoloader;
 
-
-$class_map_file = __DIR__ . '/autoload_classmap.php';
+$class_map_file = __DIR__ . '/autoload-classmap.php';
 if ( file_exists( $class_map_file ) ) {
 
 	$class_map = include $class_map_file;
@@ -33,26 +32,8 @@ if ( file_exists( $class_map_file ) ) {
 	}
 }
 
-// The plugin-scoped namespace for composer required libraries, as specified in composer.json Mozart config.
-$dep_namespace = 'BH_WP_IMAP_One_Click_List_Unsubscribe';
-// The Mozart config `dep_directory` adjusted for relative path.
-$dep_directory = '/vendor/';
-
-spl_autoload_register(
-	function ( $namespaced_class_name ) use ( $dep_namespace, $dep_directory ) {
-
-		$autoload_directory = __DIR__ . $dep_directory . '/';
-
-		// The class name with its true namespace.
-		$bare_namespaced_class_name = preg_replace( "#$dep_namespace\\\*#", '', $namespaced_class_name );
-
-		$file_path = $autoload_directory . str_replace( '\\', '/', $bare_namespaced_class_name ) . '.php';
-
-		if ( file_exists( $file_path ) ) {
-			require_once $file_path;
-		}
-	}
-);
+// Includes this after autoload-classmap.php so we can substitute classes.
+require_once __DIR__ . '/strauss/autoload.php';
 
 $wpcs_autoloader = new WP_Namespace_Autoloader();
 $wpcs_autoloader->init();

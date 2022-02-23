@@ -21,10 +21,13 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- * @package    BH_WP_IMAP_One_Click_List_Unsubscribe
+ *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
  */
 
 // If uninstall not called from WordPress, then exit.
 if ( ! defined( 'WP_UNINSTALL_PLUGIN' ) ) {
 	exit;
 }
+
+// TODO:
+
