@@ -81,6 +81,8 @@ class API implements API_Interface {
 	 */
 	public function process_new_emails( array $emails ): array {
 
+		$this->logger->debug('process_new_emails called with ' . count( $emails ) . ' new emails.' );
+
 		$process_new_emails            = array();
 		$process_new_emails['success'] = array();
 		$process_new_emails['failure'] = array();
@@ -97,6 +99,7 @@ class API implements API_Interface {
 				if ( $result['success'] ) {
 					$process_new_emails['success'][] = $email;
 				} else {
+					$this->logger->debug( 'Email NOT unsubscribed. Subject: ' . $subject );
 					$process_new_emails['failure'][] = $email;
 				}
 			}

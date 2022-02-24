@@ -25,7 +25,7 @@ class Settings implements Settings_Interface, Logger_Settings_Interface {
 	}
 
 	public function get_plugin_version(): string {
-		return defined( 'BH_WP_ONE_CLICK_LIST_UNSUBSCRIBE_VERSION' ) ? BH_WP_ONE_CLICK_LIST_UNSUBSCRIBE_VERSION : '2.0.3';
+		return defined( 'BH_WP_ONE_CLICK_LIST_UNSUBSCRIBE_VERSION' ) ? BH_WP_ONE_CLICK_LIST_UNSUBSCRIBE_VERSION : '2.0.4';
 	}
 
 	public function get_plugin_basename(): string {
