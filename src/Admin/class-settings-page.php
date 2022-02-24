@@ -105,6 +105,8 @@ class Settings_Page {
 		$cpt            = $this->settings->get_cpt_underscored_20();
 		$link_to_emails = admin_url( "edit.php?post_type={$cpt}" );
 
+		$link_to_logs = admin_url( 'admin.php?page=bh-wp-one-click-list-unsubscribe-logs' );
+
 		require_once plugin_dir_path( dirname( __FILE__ ) ) . 'Admin/partials/admin-display.php';
 	}
 

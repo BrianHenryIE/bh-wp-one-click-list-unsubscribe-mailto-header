@@ -13,6 +13,7 @@
  * @var string $fetch_emails_schedule The wp_cron schedule for checking emails.
  * @var string $last_checked The last successful run time.
  * @var string $link_to_emails
+ * @var string $link_to_logs
  */
 
 ?>
@@ -23,7 +24,7 @@
 
 	<h3>Adds the List-Unsubscribe One-Click header (RFC 8058) to outgoing mail, then checks the specified email account for the unsubscribe emails.</h3>
 
-	<p>The email account specified below will be checked on a schedule of <code><?php echo $fetch_emails_schedule; ?></code>. It was last checked <code><?php echo $last_checked; ?></code>. <a href="<?php echo $link_to_emails; ?>">View Emails</a></p>
+	<p>The email account specified below will be checked on a schedule of <code><?php echo $fetch_emails_schedule; ?></code>. It was last checked <code><?php echo $last_checked; ?></code>. <a href="<?php echo $link_to_emails; ?>">View Emails</a>. <a href="<?php echo $link_to_logs; ?>">View Logs</a></p>
 
 	<form method="POST" action="options.php">
 		<?php

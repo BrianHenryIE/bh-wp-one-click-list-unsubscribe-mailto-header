@@ -7,7 +7,7 @@ use BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Mailboxes\Mailbox_Settings_Def
 use BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Mailboxes\Mailbox_Settings_Interface;
 use BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Mailboxes\BH_WP_Mailboxes_Settings_Defaults_Trait;
 use BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Mailboxes\Account_Credentials_Interface;
-use BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Mailboxes\API\Ddeboer_Imap\Imap_Credentials_Interface;
+use BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Mailboxes\API\Ddeboer_Imap\IMAP_Credentials_Interface;
 use Psr\Log\LogLevel;
 
 class Settings implements Settings_Interface, Logger_Settings_Interface {
@@ -25,7 +25,7 @@ class Settings implements Settings_Interface, Logger_Settings_Interface {
 	}
 
 	public function get_plugin_version(): string {
-		return defined( 'BH_WP_ONE_CLICK_LIST_UNSUBSCRIBE_VERSION' ) ? BH_WP_ONE_CLICK_LIST_UNSUBSCRIBE_VERSION : '2.0.1';
+		return defined( 'BH_WP_ONE_CLICK_LIST_UNSUBSCRIBE_VERSION' ) ? BH_WP_ONE_CLICK_LIST_UNSUBSCRIBE_VERSION : '2.0.3';
 	}
 
 	public function get_plugin_basename(): string {
@@ -46,7 +46,7 @@ class Settings implements Settings_Interface, Logger_Settings_Interface {
 		$email_address = get_option( self::EMAIL_ADDRESS_OPTION );
 
 		if ( empty( $server )
-		|| empty( $username )
+			|| empty( $username )
 			|| empty( $password )
 			|| empty( $email_address )
 		) {
@@ -70,7 +70,7 @@ class Settings implements Settings_Interface, Logger_Settings_Interface {
 			// }
 
 			public function get_credentials(): Account_Credentials_Interface {
-				return new class() implements Imap_Credentials_Interface {
+				return new class() implements IMAP_Credentials_Interface {
 
 					public function get_email_imap_server(): string {
 						return get_option( Settings::EMAIL_SERVER_OPTION );
@@ -97,7 +97,7 @@ class Settings implements Settings_Interface, Logger_Settings_Interface {
 	 * @see LogLevel
 	 */
 	public function get_log_level(): string {
-		return LogLevel::INFO;
+		return LogLevel::DEBUG;
 	}
 
 	/**
@@ -138,6 +138,5 @@ class Settings implements Settings_Interface, Logger_Settings_Interface {
 	public function get_private_uploads_directory_name(): ?string {
 		return null;
 	}
-
 
 }

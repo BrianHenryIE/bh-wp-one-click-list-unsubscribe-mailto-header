@@ -71,6 +71,7 @@ abstract class Unsubscribe_Integration_Abstract {
 					if ( 200 === $request['response']['code'] ) {
 
 						$result['success'] = true;
+						$this->logger->info( "Removed subscriber {$email_address}." );
 
 					} else {
 						$this->logger->warning(
