@@ -34,7 +34,7 @@ class Settings_Unit_Test extends \Codeception\Test\Unit {
 	public function test_get_plugin_version(): void {
 		$sut    = new Settings();
 		$result = $sut->get_plugin_version();
-		$this->assertEquals( '2.0.4', $result );
+		$this->assertEquals( '2.0.6', $result );
 	}
 
 	/**
