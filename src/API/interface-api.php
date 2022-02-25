@@ -15,4 +15,5 @@ interface API_Interface {
 	public function check_for_unsubscribe_emails(): array;
 
 	public function get_last_checked_time(): ?DateTime;
+	public function get_next_check_time(): ?DateTime;
 }

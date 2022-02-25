@@ -10,7 +10,9 @@ use BrianHenryIE\WP_One_Click_List_Unsubscribe\Integrations\Newsletter;
 use BrianHenryIE\WP_One_Click_List_Unsubscribe\Integrations\Unsubscribe_Integration_Abstract;
 use BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Mailboxes\BH_Email;
 use BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Mailboxes\API\API as BH_WP_Mailboxes;
+use BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Mailboxes\WP_Includes\Cron;
 use DateTime;
+use DateTimeZone;
 use Psr\Log\LoggerAwareTrait;
 use Psr\Log\LoggerInterface;
 
@@ -81,7 +83,7 @@ class API implements API_Interface {
 	 */
 	public function process_new_emails( array $emails ): array {
 
-		$this->logger->debug('process_new_emails called with ' . count( $emails ) . ' new emails.' );
+		$this->logger->debug( 'process_new_emails called with ' . count( $emails ) . ' new emails.' );
 
 		$process_new_emails            = array();
 		$process_new_emails['success'] = array();
@@ -148,6 +150,21 @@ class API implements API_Interface {
 		}
 		$account_name = $mailboxes[0]->get_account_unique_friendly_name();
 		return $last_fetched_times[ $account_name ];
+	}
+
+	public function get_next_check_time(): ?DateTime {
+		$cron      = new Cron( $this->mailboxes, $this->mailboxes->get_settings(), $this->logger );
+		$cron_name = $cron->get_fetch_emails_cron_hook_name();
+
+		$next_scheduled_event = wp_next_scheduled( $cron_name );
+
+		if ( false === $next_scheduled_event ) {
+			return null;
+		}
+
+		$next = DateTime::createFromFormat( 'U', $next_scheduled_event, new DateTimeZone( 'UTC' ) );
+
+		return $next;
 	}
 }
 

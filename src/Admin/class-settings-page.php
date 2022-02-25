@@ -16,6 +16,7 @@ use BrianHenryIE\WP_One_Click_List_Unsubscribe\Admin\Settings\Settings_Section_T
 use BrianHenryIE\WP_One_Click_List_Unsubscribe\API\API_Interface;
 use BrianHenryIE\WP_One_Click_List_Unsubscribe\API\Settings;
 use BrianHenryIE\WP_One_Click_List_Unsubscribe\API\Settings_Interface;
+use DateTimeZone;
 use Psr\Log\LoggerAwareTrait;
 use Psr\Log\LoggerInterface;
 use DateTime;
@@ -91,12 +92,24 @@ class Settings_Page {
 		$schedules             = $this->settings->get_cron_schedules();
 		$fetch_emails_schedule = $schedules['fetch_emails'];
 
+		$next_run          = 'never';
+		$next_run_datetime = $this->api->get_next_check_time();
+		if ( ! is_null( $next_run_datetime ) ) {
+			$now      = new DateTime( 'now', new DateTimeZone( 'UTC' ) );
+			$interval = $now->diff( $next_run_datetime );
+
+			$minutes = $interval->i + ( 60 * $interval->h );
+			if ( 0 !== $minutes ) {
+				$next_run = 1 == $minutes ? 'in 1 minute' : "in {$minutes} minutes";
+			}
+		}
+
 		$last_checked          = 'never';
 		$last_checked_datetime = $this->api->get_last_checked_time();
 		if ( ! is_null( $last_checked_datetime ) ) {
-			$now      = new DateTime();
+			$now      = new DateTime( 'now', new DateTimeZone( 'UTC' ) );
 			$interval = $now->diff( $last_checked_datetime );
-			$minutes  = intval( $interval->format( 'i' ) );
+			$minutes  = $interval->i + ( 60 * $interval->h );
 			if ( 0 !== $minutes ) {
 				$last_checked = 1 == $minutes ? '1 minute ago' : "{$minutes} ago";
 			}
