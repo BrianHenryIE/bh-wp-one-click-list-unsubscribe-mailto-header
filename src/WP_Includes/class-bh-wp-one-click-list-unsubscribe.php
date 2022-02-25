@@ -8,7 +8,7 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  */
 
 namespace BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Includes;
@@ -29,7 +29,7 @@ use Psr\Log\LoggerInterface;
  * version of the plugin.
  *
  * @since      1.0.0
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  * @author     Brian Henry <BrianHenryIE@gmail.com>
  */
 class BH_WP_One_Click_List_Unsubscribe {

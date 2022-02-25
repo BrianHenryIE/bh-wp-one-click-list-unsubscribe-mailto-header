@@ -2,7 +2,7 @@
 /**
  * Tests for Settings_Section_Element_Abstract.
  *
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  * @author  Brian Henry <BrianHenryIE@gmail.com>
  */
 

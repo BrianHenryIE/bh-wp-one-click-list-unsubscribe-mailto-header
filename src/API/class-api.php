@@ -19,7 +19,7 @@ use Psr\Log\LoggerInterface;
 /**
  * Class API
  *
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  */
 class API implements API_Interface {
 	use LoggerAwareTrait;

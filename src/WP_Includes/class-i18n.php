@@ -8,7 +8,7 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  */
 
 namespace BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Includes;
@@ -20,7 +20,7 @@ namespace BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Includes;
  * so that it is ready for translation.
  *
  * @since      1.0.0
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  * @author     Brian Henry <BrianHenryIE@gmail.com>
  */
 class I18n {

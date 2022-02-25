@@ -11,7 +11,7 @@ use Psr\Log\LoggerAwareTrait;
 /**
  * Class Unsubscribe_Integration
  *
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  */
 abstract class Unsubscribe_Integration_Abstract {
 	use LoggerAwareTrait;

@@ -5,7 +5,7 @@
  * @link
  * @since      1.0.0
  *
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  */
 
 namespace BrianHenryIE\WP_One_Click_List_Unsubscribe\Admin;
@@ -15,7 +15,7 @@ use BrianHenryIE\WP_One_Click_List_Unsubscribe\API\Settings_Interface;
 /**
  * This class adds a `Settings` link on the plugins.php page.
  *
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  * @author     Brian Henry <BrianHenryIE@gmail.com>
  */
 class Plugins_Page {

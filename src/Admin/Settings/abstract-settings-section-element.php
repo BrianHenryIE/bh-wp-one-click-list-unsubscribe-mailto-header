@@ -7,7 +7,7 @@
  * @link       https://BrianHenry.ie
  * @since      2.0.0
  *
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  */
 
 namespace BrianHenryIE\WP_One_Click_List_Unsubscribe\Admin\Settings;

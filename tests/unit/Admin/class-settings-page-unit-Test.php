@@ -2,7 +2,7 @@
 /**
  * Tests for the settings page.
  *
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  * @author  Brian Henry <BrianHenryIE@gmail.com>
  */
 

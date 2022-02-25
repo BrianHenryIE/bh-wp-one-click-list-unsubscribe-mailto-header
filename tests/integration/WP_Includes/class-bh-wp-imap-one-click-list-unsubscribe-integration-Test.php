@@ -2,7 +2,7 @@
 /**
  * Tests for BH_WP_One_Click_List_Unsubscribe main setup class. Tests the actions are correctly added.
  *
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  * @author  Brian Henry <BrianHenryIE@gmail.com>
  */
 

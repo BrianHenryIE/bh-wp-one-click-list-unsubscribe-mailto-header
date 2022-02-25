@@ -21,7 +21,7 @@
  * @link       http://example.com
  * @since      1.0.0
  *
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  */
 
 // If uninstall not called from WordPress, then exit.

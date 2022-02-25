@@ -5,7 +5,7 @@
  * @link       https://github.com/BrianHenryIE/BH-WP-Mail-Via-Gmail-API
  * @since      2.0.0
  *
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  */
 
 namespace BrianHenryIE\WP_One_Click_List_Unsubscribe\Admin;
@@ -24,7 +24,7 @@ use DateTime;
 /**
  * The settings page for the plugin.
  *
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  * @author     Brian Henry <BrianHenryIE@gmail.com>
  */
 class Settings_Page {

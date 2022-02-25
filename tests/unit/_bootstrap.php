@@ -2,7 +2,7 @@
 /**
  * PHPUnit bootstrap file for WP_Mock.
  *
- *  @package brianhenryie/bh-wp-one-click-list-unsubscribe
+ * @package brianhenryie/bh-wp-one-click-list-unsubscribe
  */
 
 WP_Mock::setUsePatchwork( true );
