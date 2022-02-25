@@ -15,7 +15,7 @@
  * Plugin Name:       One-Click List-Unsubscribe
  * Plugin URI:        http://github.com/BrianHenryIE/bh-wp-one-click-list-unsubscribe/
  * Description:       Adds a return unsubscribe email address (rfc8058) to outgoing newsletters and checks that email address's inbox for unsubscribe requests.
- * Version:           2.0.6
+ * Version:           2.0.7
  * Requires PHP:      7.4
  * Author:            Brian Henry
  * Author URI:        http://brianhenry.ie/
@@ -40,7 +40,7 @@ if ( ! defined( 'WPINC' ) ) {
 
 require_once plugin_dir_path( __FILE__ ) . 'autoload.php';
 
-define( 'BH_WP_ONE_CLICK_LIST_UNSUBSCRIBE_VERSION', '2.0.6' );
+define( 'BH_WP_ONE_CLICK_LIST_UNSUBSCRIBE_VERSION', '2.0.7' );
 define( 'BH_WP_ONE_CLICK_LIST_UNSUBSCRIBE_BASENAME', plugin_basename( __FILE__ ) );
 
 function instantiate_bh_wp_one_click_list_unsubscribe() {
