@@ -82,15 +82,16 @@
         "phpunit/phpcov": "*",
         "squizlabs/php_codesniffer": "*",
         "szepeviktor/phpstan-wordpress": "^0.7.2",
+        "vlucas/phpdotenv": "^5.4",
         "voku/portable-ascii": "dev-master",
         "wordpress/wordpress": "*",
         "wp-cli/dist-archive-command": "dev-master",
         "wp-cli/wp-cli-bundle": "*",
         "wp-coding-standards/wpcs": "*  ",
-        "wpackagist-plugin/wp-mail-logging": "^1.10",
-        "wpackagist-theme/twentytwenty": "*",
         "wpackagist-plugin/mailpoet": "*",
-        "wpackagist-plugin/newsletter": "*"
+        "wpackagist-plugin/newsletter": "*",
+        "wpackagist-plugin/wp-mail-logging": "^1.10",
+        "wpackagist-theme/twentytwenty": "*"
     },
     "extra": {
         "google/apiclient-services": [

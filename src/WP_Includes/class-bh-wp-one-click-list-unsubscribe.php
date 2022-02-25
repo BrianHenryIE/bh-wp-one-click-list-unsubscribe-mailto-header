@@ -123,6 +123,9 @@ class BH_WP_One_Click_List_Unsubscribe {
 		}
 	}
 
+	/**
+	 * Add the action that listens for the new emails to process.
+	 */
 	protected function add_process_new_emails_hook(): void {
 
 		$plugin_slug = $this->settings->get_plugin_slug();
