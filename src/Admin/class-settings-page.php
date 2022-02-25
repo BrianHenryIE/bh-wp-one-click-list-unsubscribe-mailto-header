@@ -111,7 +111,7 @@ class Settings_Page {
 			$interval = $now->diff( $last_checked_datetime );
 			$minutes  = $interval->i + ( 60 * $interval->h );
 			if ( 0 !== $minutes ) {
-				$last_checked = 1 == $minutes ? '1 minute ago' : "{$minutes} ago";
+				$last_checked = 1 == $minutes ? '1 minute ago' : "{$minutes} minutes ago";
 			}
 		}
 
