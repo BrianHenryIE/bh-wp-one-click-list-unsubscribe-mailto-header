@@ -62,6 +62,10 @@ class Newsletter extends Unsubscribe_Integration_Abstract {
 
 	public function is_subscribed( string $email_address ): bool {
 
+		if ( ! class_exists( \Newsletter::class ) ) {
+			return false;
+		}
+
 		$newsletter = \Newsletter::instance();
 
 		$tnp_user = $newsletter->get_user( $email_address );

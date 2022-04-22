@@ -62,6 +62,10 @@ class MailPoet extends Unsubscribe_Integration_Abstract {
 	 */
 	public function is_subscribed( string $email_address ): bool {
 
+		if ( ! class_exists( \MailPoet\API\API::class ) ) {
+			return false;
+		}
+
 		try {
 			$mailpoet_api = \MailPoet\API\API::MP( 'v1' );
 		} catch ( \Exception $e ) {
