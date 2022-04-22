@@ -47,52 +47,6 @@ class API_Unit_Test extends \Codeception\Test\Unit {
 	}
 
 	/**
-	 * @covers ::process_new_emails
-	 */
-	public function test_process_new_emails(): void {
-
-		$logger    = new ColorLogger();
-		$mailboxes = $this->makeEmpty( BH_WP_Mailboxes::class );
-		$settings  = $this->makeEmpty( Settings_Interface::class );
-
-		$sut = new API( $mailboxes, $settings, $logger );
-
-		$unsubscribe_integration = $this->makeEmpty(
-			Unsubscribe_Integration_Abstract::class,
-			array(
-				'remove_subscriber' => Stub::consecutive( array( 'success' => true ), array( 'success' => false ) ),
-			)
-		);
-
-		\WP_Mock::onFilter( 'bh_wp_one_click_list_unsubscribe_integrations' )
-				->with( array( MailPoet::class, Newsletter::class ) )
-				->reply( array( $unsubscribe_integration ) );
-
-		$emails = array(
-			$this->make(
-				BH_Email::class,
-				array(
-					'get_from_email' => 'asd',
-					'get_subject'    => 'unsubscribe:asd',
-				)
-			),
-			$this->make(
-				BH_Email::class,
-				array(
-					'get_from_email' => 'asd',
-					'get_subject'    => 'regular-email',
-				)
-			),
-		);
-
-		$result = $sut->process_new_emails( $emails );
-
-		$this->assertCount( 1, $result['success'] );
-		$this->assertCount( 1, $result['failure'] );
-
-	}
-
-	/**
 	 * @covers ::check_for_unsubscribe_emails
 	 */
 	public function test_check_for_unsubscribe_emails(): void {

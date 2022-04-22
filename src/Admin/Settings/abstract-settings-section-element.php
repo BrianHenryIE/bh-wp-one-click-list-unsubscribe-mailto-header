@@ -33,28 +33,28 @@ abstract class Settings_Section_Element_Abstract {
 	 *
 	 * @var string $page The settings page page slug.
 	 */
-	protected $page;
+	protected string $page;
 
 	/**
 	 * The section name as used with add_settings_section().
 	 *
 	 * @var string $section The section/tab the setting is displayed in.
 	 */
-	protected $section = 'default';
+	protected string $section = 'default';
 
 	/**
 	 * The data array the WordPress Settings API passes to print_field_callback().
 	 *
-	 * @var array Array of data available to print_field_callback()
+	 * @var array{helper:string, supplemental:string, default:mixed, placeholder:string} Array of data available to print_field_callback()
 	 */
-	protected $add_settings_field_output_args = array();
+	protected array $add_settings_field_output_args = array();
 
 	/**
 	 * The options array used when registering the setting.
 	 *
 	 * @var array Configuration options for register_setting()
 	 */
-	protected $register_setting_description_args;
+	protected array $register_setting_description_args;
 
 	/**
 	 * Settings_Section_Element constructor.
@@ -62,8 +62,6 @@ abstract class Settings_Section_Element_Abstract {
 	 * @param Settings_Interface $settings Plugin settings.
 	 * @param string             $section The name of the section the settings are displayed in.
 	 * @param string             $settings_page_slug_name The page slug the settings section is on.
-	 * @param string             $plugin_name The name of this plugin.
-	 * @param string             $version     The version of this plugin.
 	 */
 	public function __construct( $settings, $section, $settings_page_slug_name ) {
 

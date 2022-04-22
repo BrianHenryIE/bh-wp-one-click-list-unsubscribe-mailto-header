@@ -16,6 +16,10 @@ use TNP_User;
  */
 class Newsletter extends Unsubscribe_Integration_Abstract {
 
+	public function get_friendly_name(): string {
+		return 'The Newsletter Plugin';
+	}
+
 	/**
 	 * The POST list-unsubscribe header is added at priority 10.
 	 *
@@ -26,7 +30,7 @@ class Newsletter extends Unsubscribe_Integration_Abstract {
 	}
 
 	/**
-	 * Prepends the existing List-Unsubscribe header with the email address.
+	 * Adds the existing List-Unsubscribe header with the email address.
 	 *
 	 * Existing header:
 	 * ```
@@ -43,36 +47,29 @@ class Newsletter extends Unsubscribe_Integration_Abstract {
 	 * Hooked at priority 11 because the Newsletter developers use the same filter to initially add the header.
 	 * @see \NewsletterUnsubscription
 	 *
-	 * @param string[]  $headers
-	 * @param TNP_Email $email
-	 * @param TNP_User  $user
+	 * @param array<string,string> $headers
+	 * @param TNP_Email            $email
+	 * @param TNP_User             $user
 	 *
 	 * @return string[]
 	 */
 	public function add_unsubscribe_email_to_headers( array $headers, $email, $user ) {
 
-		$headers = $this->add_mailto_to_existing_header( $headers );
+		$headers = $this->api->add_mailto_to_existing_headers( $headers );
 
 		return $headers;
 	}
-	//
-	// **
-	// *
-	// * @param string $email_address The email address that sent the unsubscribe request.
-	// * @param string $subject The email subject.
-	// */
-	// public function unsubscribe_from_newsletter( $email_address, $subject ) {
-	//
-	// parent::remove_subscriber( $email_address, $subject );
-	//
-	// if ( ! class_exists( TNP::class ) ) {
-	// return;
-	// }
-	//
-	// $subject should have a regex run against it to pull out the data (list#etc) added in the outgoing method.
-	// But the Newsletter API doesn't have any way to match the unsubscribe to the particular newsletter or lists.
-	//
-	// TNP::unsubscribe( array( 'email' => $email_address ) );
-	// }
 
+	public function is_subscribed( string $email_address ): bool {
+
+		$newsletter = \Newsletter::instance();
+
+		$tnp_user = $newsletter->get_user( $email_address );
+
+		if ( is_null( $tnp_user ) ) {
+			return false;
+		}
+
+		return $tnp_user->status === TNP_User::STATUS_CONFIRMED;
+	}
 }

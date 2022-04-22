@@ -22,6 +22,7 @@ class Plugins_Page_Unit_Test extends \Codeception\Test\Unit {
 
 	/**
 	 * @covers ::action_links
+	 * @covers ::__construct
 	 */
 	public function test_actions_links_settings_link(): void {
 

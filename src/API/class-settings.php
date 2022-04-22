@@ -2,7 +2,7 @@
 
 namespace BrianHenryIE\WP_One_Click_List_Unsubscribe\API;
 
-use BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Logger\API\Logger_Settings_Interface;
+use BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Logger\Logger_Settings_Interface;
 use BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Mailboxes\Mailbox_Settings_Defaults_Trait;
 use BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Mailboxes\Mailbox_Settings_Interface;
 use BrianHenryIE\WP_One_Click_List_Unsubscribe\WP_Mailboxes\BH_WP_Mailboxes_Settings_Defaults_Trait;
@@ -25,7 +25,7 @@ class Settings implements Settings_Interface, Logger_Settings_Interface {
 	}
 
 	public function get_plugin_version(): string {
-		return defined( 'BH_WP_ONE_CLICK_LIST_UNSUBSCRIBE_VERSION' ) ? BH_WP_ONE_CLICK_LIST_UNSUBSCRIBE_VERSION : '2.0.7';
+		return defined( 'BH_WP_ONE_CLICK_LIST_UNSUBSCRIBE_VERSION' ) ? BH_WP_ONE_CLICK_LIST_UNSUBSCRIBE_VERSION : '2.1.0';
 	}
 
 	public function get_plugin_basename(): string {
@@ -59,15 +59,6 @@ class Settings implements Settings_Interface, Logger_Settings_Interface {
 			public function get_account_unique_friendly_name(): string {
 				return get_option( Settings::EMAIL_ADDRESS_OPTION );
 			}
-
-			/**
-			 * If the subject contains "unsubscribe:".
-			 *
-			 * @return string
-			 */
-			// public function get_subject_regex(): string {
-			// return get_option( self::SUBJECT_REGEX_OPTION, '/unsubscribe:/' );
-			// }
 
 			public function get_credentials(): Account_Credentials_Interface {
 				return new class() implements IMAP_Credentials_Interface {

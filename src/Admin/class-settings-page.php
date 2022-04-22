@@ -2,7 +2,7 @@
 /**
  * The admin-specific functionality of the plugin.
  *
- * @link       https://github.com/BrianHenryIE/BH-WP-Mail-Via-Gmail-API
+ * @link       https://github.com/BrianHenryIE/bh-wp-one-click-list-unsubscribe
  * @since      2.0.0
  *
  * @package brianhenryie/bh-wp-one-click-list-unsubscribe
@@ -50,10 +50,9 @@ class Settings_Page {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_styles() {
+	public function enqueue_styles(): void {
 
-		wp_enqueue_style( $this->settings->get_plugin_slug(), plugin_dir_url( __FILE__ ) . 'css/bh-wp-one-click-list-unsubscribe-admin.css', array(), $this->settings->get_plugin_version(), 'all' );
-
+		// wp_enqueue_style( $this->settings->get_plugin_slug(), plugin_dir_url( __FILE__ ) . 'css/bh-wp-one-click-list-unsubscribe-admin.css', array(), $this->settings->get_plugin_version(), 'all' );
 	}
 
 	/**
@@ -61,10 +60,9 @@ class Settings_Page {
 	 *
 	 * @since    1.0.0
 	 */
-	public function enqueue_scripts() {
+	public function enqueue_scripts(): void {
 
-		wp_enqueue_script( $this->settings->get_plugin_slug(), plugin_dir_url( __FILE__ ) . 'js/bh-wp-one-click-list-unsubscribe-admin.js', array( 'jquery' ), $this->settings->get_plugin_version(), false );
-
+		// wp_enqueue_script( $this->settings->get_plugin_slug(), plugin_dir_url( __FILE__ ) . 'js/bh-wp-one-click-list-unsubscribe-admin.js', array( 'jquery' ), $this->settings->get_plugin_version(), false );
 	}
 
 	/**

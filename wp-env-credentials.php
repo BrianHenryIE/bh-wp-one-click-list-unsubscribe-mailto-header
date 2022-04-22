@@ -1,8 +1,6 @@
 <?php
 /**
  * Plugin Name:       One-Click List-Unsubscribe .env.secret credentials
- *
- * include this in wp-config to set the credentials in local testing.
  */
 
 use BrianHenryIE\WP_One_Click_List_Unsubscribe\API\Settings;

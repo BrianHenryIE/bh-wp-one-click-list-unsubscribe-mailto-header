@@ -21,36 +21,36 @@
             "composer/installers": true
         }
     },
-    "repositories": [
-        {
+    "repositories": {
+        "wptrt/admin-notices": {
+            "type": "git",
+            "url": "https://github.com/brianhenryie/admin-notices"
+        },
+        "brianhenryie/bh-wp-private-uploads": {
+            "type": "git",
+            "url": "https://github.com/brianhenryie/bh-wp-private-uploads"
+        },
+        "wordpress/wordpress": {
             "url": "https://github.com/WordPress/wordpress-develop",
             "type": "git"
         },
-        {
+        "brianhenryie/composer-phpstorm": {
             "url": "https://github.com/BrianHenryIE/composer-phpstorm",
             "type": "git"
         },
-        {
-            "type":"composer",
-            "url":"https://wpackagist.org"
+        "composer/composer": {
+            "type": "composer",
+            "url": "https://wpackagist.org"
         },
-        {
-            "url": "https://github.com/BrianHenryIE/admin-notices",
+        "brianhenryie/bh-wp-logger": {
+            "url": "https://github.com/BrianHenryIE/bh-wp-logger",
             "type": "git"
         },
-        {
-            "type": "path",
-            "url": "../bh-wp-logger"
-        },
-        {
-            "type": "path",
-            "url": "../bh-wp-private-uploads"
-        },
-        {
+        "brianhenryie/bh-wp-mailboxes": {
             "type": "path",
             "url": "../bh-wp-mailboxes"
         }
-    ],
+    },
     "require": {
         "brianhenryie/bh-wp-logger": "dev-master",
         "brianhenryie/bh-wp-mailboxes": "dev-master",
@@ -85,7 +85,7 @@
         "vlucas/phpdotenv": "^5.4",
         "voku/portable-ascii": "dev-master",
         "wordpress/wordpress": "*",
-        "wp-cli/dist-archive-command": "dev-master",
+        "wp-cli/dist-archive-command": "*",
         "wp-cli/wp-cli-bundle": "*",
         "wp-coding-standards/wpcs": "*  ",
         "wpackagist-plugin/mailpoet": "*",

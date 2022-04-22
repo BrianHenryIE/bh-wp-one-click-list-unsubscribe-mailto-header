@@ -73,9 +73,8 @@ class BH_WP_One_Click_List_Unsubscribe {
 	 * with WordPress.
 	 *
 	 * @since    1.0.0
-	 * @access   private
 	 */
-	protected function set_locale() {
+	protected function set_locale(): void {
 
 		$plugin_i18n = new I18n();
 
@@ -87,9 +86,8 @@ class BH_WP_One_Click_List_Unsubscribe {
 	 * of the plugin.
 	 *
 	 * @since    1.0.0
-	 * @access   private
 	 */
-	protected function define_settings_page_hooks() {
+	protected function define_settings_page_hooks(): void {
 
 		$settings_page = new Settings_Page( $this->api, $this->settings, $this->logger );
 
@@ -113,7 +111,7 @@ class BH_WP_One_Click_List_Unsubscribe {
 	/**
 	 * Call the function on each integration to add the filter to edit the list-unsubscribe header on outgoing emails.
 	 */
-	protected function initialize_integrations() {
+	protected function initialize_integrations(): void {
 
 		$integrations = $this->api->get_unsubscribe_integrations();
 
