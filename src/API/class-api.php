@@ -134,8 +134,13 @@ class API implements API_Interface {
 
 		foreach ( $emails as $email ) {
 
-			$from    = $email->get_from_email();
 			$subject = $email->get_subject();
+
+			if ( 1 !== preg_match( '/unsubscribe:([^:]*)/', $email_subject ) ) {
+				continue;
+			}
+
+			$from = $email->get_from_email();
 
 			// Find if/what mailing list they are subscribed to.
 
