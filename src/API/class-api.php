@@ -136,7 +136,7 @@ class API implements API_Interface {
 
 			$subject = $email->get_subject();
 
-			if ( 1 !== preg_match( '/unsubscribe:([^:]*)/', $email_subject ) ) {
+			if ( 1 !== preg_match( '/unsubscribe:([^:]*)/', $subject ) ) {
 				continue;
 			}
 
